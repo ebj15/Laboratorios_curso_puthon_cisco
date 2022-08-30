@@ -10,6 +10,27 @@
 # •	Imprime las letras no consumidas en la pantalla, cada una de ellas en una línea separada.
 # Prueba tu programa con los datos que le proporcionamos
 
+from ast import Continue
+from difflib import HtmlDiff
+from multiprocessing import Condition
+
+
 user_word = input("Ingrese una palabra:")
 user_word = user_word.upper()
-print(user_word)
+user_word2 = ""
+# print(user_word)
+for i in user_word:
+    if i == "A":
+        continue
+    elif i == "E":
+        continue
+    elif i == "I":
+        continue
+    elif i == "O":
+        continue
+    elif i == "U":
+        continue
+    else:
+        user_word2 += i
+for i in user_word2:
+    print(i,end = "\n")
