@@ -8,11 +8,7 @@
 # Prueba tu código con los datos que hemos proporcionado. -->
 
 
-from re import I
-from typing import Counter
-
-
-blocks =2  #int(input("Ingresa el número de bloques: "))
+blocks =  int(input("Ingresa el número de bloques: "))
 
 contador = 0 # Cuenta los ciclos del while
 suma = 0 # Acumular los niveles hasta completar los bloques disponibles
@@ -25,11 +21,5 @@ if suma > blocks: # Si la suma es mayor el ultimo valor de contador se le restar
     altura = contador -1
 else:
     altura = contador # De lo contrario el valor sera el ultmo que registro el contador  
-print("La altura de la piramide es de: ", altura)
-
-   
-#print(height)
-#	10
-
-#print("La altura de la pirámide:", height)
+print("La altura de la pirámide:", altura)
 
