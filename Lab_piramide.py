@@ -12,19 +12,23 @@ from re import I
 from typing import Counter
 
 
-blocks = int(input("Ingresa el número de bloques: "))
+blocks =2  #int(input("Ingresa el número de bloques: "))
 
-i = 1
-height = 0
-counter = 0
-while i <= blocks:
-    i = i+1
-    counter += i+i
-    height += 1
-    print("Valor temporal de i",i)
-    if counter >= blocks:
-        break
-print(height)
+contador = 0 # Cuenta los ciclos del while
+suma = 0 # Acumular los niveles hasta completar los bloques disponibles
+while contador <= blocks: # Incrementa el valor del contador hasta que sea igual o superior a la cantidad de bloques
+    contador += 1
+    suma += contador
+    if suma >= blocks:
+        break # Rompe el ciclo si se alcanzo o sobrepaso el numero de bloques
+if suma > blocks: # Si la suma es mayor el ultimo valor de contador se le restara uno para optener la altura
+    altura = contador -1
+else:
+    altura = contador # De lo contrario el valor sera el ultmo que registro el contador  
+print("La altura de la piramide es de: ", altura)
+
+   
+#print(height)
 #	10
 
 #print("La altura de la pirámide:", height)
