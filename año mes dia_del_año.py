@@ -4,8 +4,6 @@
 #  Esta prueba es solo el comienzo.
 
 ####
-from traceback import print_tb
-
 
 year = 0
 month = 0
@@ -24,10 +22,27 @@ def ingreso_datos():
         print(" Numero de mes incorrecto")
         month = int(input("Ingresa un mes en numero: "))
     day = int(input("Ingresa un dia en numero: "))
-    while day < 1 or day > 31:
+    if days_in_month(year,month) == 28:
+         if day < 1 and day > 28:
+            print(" Numero de dia incorrecto, el numero de dia debe ser entre 1 y 28:")
+            day = int(input("Ingresa un dia en numero: "))
+    if days_in_month(year,month) == 29:
+         if day < 1 and day > 29:
+            print(" Numero de dia incorrecto, el numero de dia debe ser entre 1 y 29:")
+            day = int(input("Ingresa un dia en numero: "))
+    if days_in_month(year,month) == 30:
+         if day < 1 and day > 30:
+            print(" Numero de dia incorrecto, el numero de dia debe ser entre 1 y 30:")
+            day = int(input("Ingresa un dia en numero: "))
+    if days_in_month(year,month) == 31:
+         if day < 1 and day > 31:
+            print(" Numero de dia incorrecto, el numero de dia debe ser entre 1 y 31:")
+            day = int(input("Ingresa un dia en numero: "))
+    
+    else:
         print(" Numero de dia incorrecto")
         day = int(input("Ingresa un dia en numero: "))
-ingreso_datos()
+#ingreso_datos()
 
 def is_year_leap(year):
 #    
@@ -36,6 +51,7 @@ def is_year_leap(year):
 
 #
 def days_in_month(year,month):
+    
     month_31 = [ 1, 3, 5, 7,8,10,12]
     month_30 = [ 4, 6, 9,11]
     if is_year_leap(year) == True and month == 2:
@@ -49,15 +65,17 @@ def days_in_month(year,month):
     
 #
 def day_of_year(year, month, day):
-    sum_days = 0
-    if month == 1:
-        sum_days += day
-        return
-    for i in range(1,month):        
-        else:
-            sum_days += days_in_month(year,month) + day     
-    print("Año: ", year, "Mes:", month, " Dia:", day, "Dias del año a la fecha:", sum_days)
-
+    sumadiasxmes = 0
+    total_dias = 0
+    for i in range(1,month):
+        sumadiasxmes += days_in_month(year,i)
+    total_dias += sumadiasxmes + day
+    print("Año:", year, "Mes:",month,"Dia:", day, "Suma todal de dias a la fecha:", total_dias)
+ 
+    
+#
+ingreso_datos()
+day_of_year(year, month, day)
 
 #
 test_data = [1900, 2000, 2016, 1987,1700, ] #1900, 2100, 2200, 2300, 2500, 2600,1600,2400]
@@ -85,5 +103,3 @@ for i in range(len(test_years)):
 	else:
 		print("Fallido")
 
-
-day_of_year(year, month, day)
