@@ -1,9 +1,7 @@
-from re import X
+l = [1]
+print(l)
+l = [0.5]
+print(l)
 
-
-i = 15
-j = 22
-log =i and j
-bit = i & j
-
-print(log, bit)
+short_list = [1]
+one_value = short_list[0.5]

@@ -22,26 +22,24 @@ def ingreso_datos():
         print(" Numero de mes incorrecto")
         month = int(input("Ingresa un mes en numero: "))
     day = int(input("Ingresa un dia en numero: "))
-    if days_in_month(year,month) == 28:
-         if day < 1 and day > 28:
+    while days_in_month(year,month) == 28:
+         while day < 1 or day > 28:
             print(" Numero de dia incorrecto, el numero de dia debe ser entre 1 y 28:")
             day = int(input("Ingresa un dia en numero: "))
     if days_in_month(year,month) == 29:
-         if day < 1 and day > 29:
+         if day < 1 or day > 29:
             print(" Numero de dia incorrecto, el numero de dia debe ser entre 1 y 29:")
             day = int(input("Ingresa un dia en numero: "))
     if days_in_month(year,month) == 30:
-         if day < 1 and day > 30:
+         if day < 1 or day > 30:
             print(" Numero de dia incorrecto, el numero de dia debe ser entre 1 y 30:")
             day = int(input("Ingresa un dia en numero: "))
     if days_in_month(year,month) == 31:
-         if day < 1 and day > 31:
+         if day < 1 or day > 31:
             print(" Numero de dia incorrecto, el numero de dia debe ser entre 1 y 31:")
             day = int(input("Ingresa un dia en numero: "))
-    
-    else:
-        print(" Numero de dia incorrecto")
-        day = int(input("Ingresa un dia en numero: "))
+   
+   
 #ingreso_datos()
 
 def is_year_leap(year):
