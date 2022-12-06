@@ -28,12 +28,11 @@ def EnterMove(board):
     
     while True:  
         try:
-            entrada=int(input("Ingresa tu movimiento:"))
+            entrada= int(input("Ingresa tu movimiento:"))
         except ValueError: 
             print("Se espera un # entero...")
             continue
-        except:
-            if entrada < 1 or entrada > 10 or entrada ==5:
+        if entrada < 1 or entrada > 9 or entrada == 5:
                 print(" ¡Igresa un numero del tablero!")
                 continue                        
         else:
@@ -41,9 +40,8 @@ def EnterMove(board):
                 for j in range(0,3):
                     if entrada == board[i][j]:
                         board[i][j]= "O"
-                    else:
-                        print("Error de elección")
-                    return board
+            return board
                 
 DisplayBoard(board)
 EnterMove(board)
+DisplayBoard(board)
